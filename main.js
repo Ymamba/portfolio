@@ -16,6 +16,11 @@ document.addEventListener('scroll', () =>{
 
 // handle scrolling when tapping on the navbar menu
 
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: 'smooth' });
+}
+
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event)=>{
     console.log(event.target.dataset.link);
@@ -24,7 +29,24 @@ navbarMenu.addEventListener('click', (event)=>{
     if(link==null){
         return;
     }
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: 'smooth'});
+    // 기존코드
+    // console.log(event.target.dataset.link);
+    // const scrollTo = document.querySelector(link);
+    // scrollTo.scrollIntoView({behavior: 'smooth', block: 'center'});
+    
+    scrollIntoView(link);
+    // 정리한코드
+
+});
+
+// Handle scrolling when tapping on the navbar menu
+
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    // 기존코드
+    // const scrollTo = document.querySelector('#contact');
+    // scrollTo.scrollIntoView('smooth'); 
+    
+    scrollIntoView('#contact');
+    // 정리한코드
 });
