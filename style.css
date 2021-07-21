@@ -194,6 +194,11 @@ p {
   text-align: center;
 }
 
+#home.home--dark {
+  background-color: var(--color-pink);
+  padding: 8px;
+}
+
 .home__avatar {
   width: 250px;
   height: 250px;

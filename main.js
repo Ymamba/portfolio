@@ -50,3 +50,11 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact');
     // 정리한코드
 });
+
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () =>{
+    // console.log(1 - window.scrollY / homeHeight);
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+});
