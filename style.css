@@ -155,6 +155,15 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -166,6 +175,8 @@ p {
   max-width: 1200px;
   margin: auto;
 }
+
+/* Home */
 
 #home {
   background: url("imgs/home-background.png") center/cover no-repeat;
@@ -196,7 +207,7 @@ p {
 
 /* About */
 
-.about__major {
+.about__majors {
   display: flex;
   justify-content: space-between;
   margin: 80px 0;
@@ -483,4 +494,45 @@ p {
 .contact__links a:hover svg {
   transform: scale(1.1);
   fill: var(--color-yellow);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  /* Home */
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navber {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  /* Aboutme */
+  .about__majors {
+    flex-direction: column;
+  }
+  .major {
+    margin-bottom: 38px;
+  }
+
+  /* Skills */
+  .skillset {
+    flex-direction: column;
+  }
+
+  /* My work */
+  .project {
+    flex-grow: 1;
+  }
+
+  /* Testimonials */
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
