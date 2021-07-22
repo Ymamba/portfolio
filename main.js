@@ -1,11 +1,11 @@
 'use strict'
 
-// Make navbar transparent when it is on the top
+// make navbar transparent when it is on the top
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
-document.addEventListener('scroll', () => {
-    // console.log(window.scrollY);
-    // console.log(navbarHeight);
+document.addEventListener('scroll', () =>{
+    console.log(window.scrollY);
+    console.log(navbarHeight);
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar--dark');
     }
@@ -14,9 +14,15 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// handle scrolling when tapping on the navbar menu
+
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: 'smooth' });
+}
+
 const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
+navbarMenu.addEventListener('click', (event)=>{
     console.log(event.target.dataset.link);
     const target = event.target;
     const link = target.dataset.link;
@@ -27,18 +33,11 @@ navbarMenu.addEventListener('click', (event) => {
     // console.log(event.target.dataset.link);
     // const scrollTo = document.querySelector(link);
     // scrollTo.scrollIntoView({behavior: 'smooth', block: 'center'});
-    navbarMenu.classList.remove('open');
+    
     scrollIntoView(link);
     // 정리한코드
 
 });
-
-// Navbar toggle button for small screen
-const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
-navbarToggleBtn.addEventListener('click', () => {
-    navbarMenu.classList.toggle('open');
-});
-
 
 // Handle scrolling when tapping on the navbar menu
 
@@ -140,7 +139,3 @@ workBtnContainer.addEventListener('click', (e) => {
 });
 
 
-function scrollIntoView(selector){
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: 'smooth' });
-}
