@@ -79,7 +79,52 @@ arrowUp.addEventListener('click', ()=>{
 });
 
 
+// Projects
+
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null){
+        return;
+    }
+    // console.log(filter)
+    projectContainer.classList.add('anim-out');
+
+setTimeout(() => {
+    projects.forEach((project) =>{
+        // console.log(project)
+
+            // forEach 와 같은것
+    // for(let project of projects){
+    //     console.log(project)
+    // }
+
+    // let project;
+    // for(let i =0; i < projects.lenth ; i++){
+    //     project = projects[i];
+    //     console.log(project)
+    // }
+
+        console.log(project.dataset.type);
+        if(filter ==='*' || filter === project.dataset.type){
+            project.classList.remove('invisible');
+            // 필터가 맞으면 안보여주는 클래스 제거
+        }
+        else{
+            project.classList.add('invisible');
+             // 필터가 맞으면 안보여주는 클래스 추가
+        }
+    });
 
 
+    projectContainer.classList.remove('anim-out');
+}, 300);
+// 0.3초 뒤에 함수불러줘라
+
+
+    
+});
 
 
