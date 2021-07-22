@@ -10,7 +10,9 @@
     <meta name="author" content="Yamba">
     <link rel="icon" type="image/png" href="imgs/favicon.png" />
     <script src="https://kit.fontawesome.com/3c4b2652b6.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
@@ -20,31 +22,30 @@
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar__logo">
-            <a href="#"><img src="imgs/favicon.png" alt="Yamba"></a>    
+            <img src="imgs/logo.png" alt="Yamba" class="logo"/>
+            <a href="#">amba</a>    
         </div>
-        <div class="navbar__menu">
-            <ul class="navbar__menu">
-                <li class="navbar__menu__item active" data-link="#home">Home</li>
-                <li class="navbar__menu__item" data-link="#about">About</li>
-                <li class="navbar__menu__item" data-link="#skills">Skills</li>
-                <li class="navbar__menu__item" data-link="#work">Work</li>
-                <!-- <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li> -->
-                <li class="navbar__menu__item" data-link="#contact">Contact</li>
-            </ul>
-        </div>
-
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item active" data-link="#home">Home</li>
+            <li class="navbar__menu__item" data-link="#about">About</li>
+            <li class="navbar__menu__item" data-link="#skills">Skills</li>
+            <li class="navbar__menu__item" data-link="#work">Work</li>
+            <!-- <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li> -->
+            <li class="navbar__menu__item" data-link="#contact">Contact</li>
+        </ul>
         <!-- Toggle button -->
         <button class="navbar__toggle-btn">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
+
     <!-- Home -->
     <section id="home">
         <div class="home__container">
-            <img src="imgs/profile.jpg" alt="Yamba's profile photo " class="home__avatar">
+            <img src="imgs/profile.jpg" alt="Yamba's profile photo " class="home__avatar"/>
             
             <h1 class="home__title">
-                A coder who always <br/>ecdysis like a snake
+                A coder who always <br />ecdysis like a snake
             </h1>
             <h2 class="home__description">
                 Developers aiming for the full stack
@@ -54,6 +55,7 @@
             </button>
         </div>
     </section>
+
     <!-- About -->
     <section id="about" class="section section__container">
         <h1>About me</h1>
@@ -104,6 +106,7 @@
             </div>
         </div>
     </section>
+
     <!-- Skills -->
     <section id="skills" class="section">
         <div class="section__container">
@@ -184,6 +187,7 @@
             </div>
             </div>
     </section>
+
     <!-- Work -->
     <section id="work" class="section">
         <div class="section__container">
@@ -311,6 +315,7 @@
             </div>
         </div>
     </section>
+
     <!-- Testimonials -->
     <!-- <section id="testimonials" class="section">
         <div class="section__container">
@@ -352,6 +357,7 @@
             </div>
         </div>
     </section>   -->
+    
     <!-- Contact -->
     <section id="contact" class="section">
         <h1 class="contact__title">
@@ -410,6 +416,7 @@
             2021 Yamba - All rights reserved
         </p>
     </section>
+    
     <!-- Arrow up -->
     <button class="arrow-up">
         <i class="fas fa-arrow-up"></i>
