@@ -90,38 +90,49 @@ workBtnContainer.addEventListener('click', (e) => {
         return;
     }
     // console.log(filter)
+
+
+    // Remove selection from the previous item and select the new one
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
+
+
+
+
     projectContainer.classList.add('anim-out');
+    setTimeout(() => {
+        projects.forEach((project) =>{
+            // console.log(project)
 
-setTimeout(() => {
-    projects.forEach((project) =>{
-        // console.log(project)
+                // forEach 와 같은것
+        // for(let project of projects){
+        //     console.log(project)
+        // }
 
-            // forEach 와 같은것
-    // for(let project of projects){
-    //     console.log(project)
-    // }
+        // let project;
+        // for(let i =0; i < projects.lenth ; i++){
+        //     project = projects[i];
+        //     console.log(project)
+        // }
 
-    // let project;
-    // for(let i =0; i < projects.lenth ; i++){
-    //     project = projects[i];
-    //     console.log(project)
-    // }
-
-        console.log(project.dataset.type);
-        if(filter ==='*' || filter === project.dataset.type){
-            project.classList.remove('invisible');
-            // 필터가 맞으면 안보여주는 클래스 제거
-        }
-        else{
-            project.classList.add('invisible');
-             // 필터가 맞으면 안보여주는 클래스 추가
-        }
-    });
+            console.log(project.dataset.type);
+            if(filter ==='*' || filter === project.dataset.type){
+                project.classList.remove('invisible');
+                // 필터가 맞으면 안보여주는 클래스 제거
+            }
+            else{
+                project.classList.add('invisible');
+                // 필터가 맞으면 안보여주는 클래스 추가
+            }
+        });
 
 
-    projectContainer.classList.remove('anim-out');
-}, 300);
-// 0.3초 뒤에 함수불러줘라
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+    // 0.3초 뒤에 함수불러줘라
 
 
     
