@@ -4,8 +4,8 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () =>{
-    console.log(window.scrollY);
-    console.log(navbarHeight);
+    // console.log(window.scrollY);
+    // console.log(navbarHeight);
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar--dark');
     }
@@ -15,12 +15,6 @@ document.addEventListener('scroll', () =>{
 });
 
 // handle scrolling when tapping on the navbar menu
-
-function scrollIntoView(selector){
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: 'smooth' });
-}
-
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event)=>{
     console.log(event.target.dataset.link);
@@ -33,23 +27,25 @@ navbarMenu.addEventListener('click', (event)=>{
     // console.log(event.target.dataset.link);
     // const scrollTo = document.querySelector(link);
     // scrollTo.scrollIntoView({behavior: 'smooth', block: 'center'});
-    
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
     // 정리한코드
 
 });
 
-// Handle scrolling when tapping on the navbar menu
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+navbarMenu.classList.toggle('open');
+});
 
+
+// Handle click on "contact me" button on home
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', () => {
-    // 기존코드
-    // const scrollTo = document.querySelector('#contact');
-    // scrollTo.scrollIntoView('smooth'); 
-    
-    scrollIntoView('#contact');
-    // 정리한코드
+scrollIntoView('#contact');
 });
+
 
 // Make home slowly fade to transparent as the window scrolls down
 const home = document.querySelector('.home__container');
@@ -73,7 +69,6 @@ document.addEventListener('scroll', ()=>{
 });
 
 // Handle click on the "arrow up" button
-
 arrowUp.addEventListener('click', ()=>{
     scrollIntoView('#home');
 });
@@ -91,16 +86,11 @@ workBtnContainer.addEventListener('click', (e) => {
     }
     // console.log(filter)
 
-
     // Remove selection from the previous item and select the new one
     const active = document.querySelector('.category__btn.selected');
     active.classList.remove('selected');
     const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
     target.classList.add('selected');
-
-
-
-
 
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
@@ -128,14 +118,23 @@ workBtnContainer.addEventListener('click', (e) => {
                 // 필터가 맞으면 안보여주는 클래스 추가
             }
         });
-
-
         projectContainer.classList.remove('anim-out');
     }, 300);
     // 0.3초 뒤에 함수불러줘라
-
-
-    
 });
+
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: 'smooth' });
+}
+
+
+
+
+
+
+
+
+
 
 
